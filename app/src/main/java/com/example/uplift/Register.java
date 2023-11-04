@@ -28,6 +28,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Register extends AppCompatActivity {
 
@@ -40,6 +42,32 @@ public class Register extends AppCompatActivity {
     String userID;
     FirebaseAuth fAuth;
 
+    public static boolean isValid(String email) {
+        // Regular expression pattern for a valid email address
+        String regex = "^[A-Za-z0-9+_.-]+@(.+)$";
+
+        // Create a Pattern object
+        Pattern pattern = Pattern.compile(regex);
+
+        // Create a Matcher object
+        Matcher matcher = pattern.matcher(email);
+
+        // Check if the email matches the pattern
+        return matcher.matches();
+    }
+    public static boolean isPasswordValid(String password) {
+        // Regular expression pattern for a password with at least one uppercase, one lowercase, and one special character
+        String regex = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*()_+\\-={}\\[\\]:;<>,.?/~]).{8,}$";
+
+        // Create a Pattern object
+        Pattern pattern = Pattern.compile(regex);
+
+        // Create a Matcher object
+        Matcher matcher = pattern.matcher(password);
+
+        // Check if the password matches the pattern
+        return matcher.matches();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,6 +114,17 @@ public class Register extends AppCompatActivity {
                     mPhoneNumber.setError("Phone Number must be of 10 digit");
                     return;
                 }
+
+                if (!isValid(email)){
+                    Toast.makeText(Register.this, "Email is invalid", Toast.LENGTH_SHORT).show();
+                    mEmailId.setError("Email is invalid");
+                    return;
+                }
+                if (!isPasswordValid(password)){
+                    mPassword.setError("Password must contain Uppercase, Lowercase, SpecialCharacters, digit ");
+                    return;
+                }
+
                 if (TextUtils.isEmpty(email)){
                     mEmailId.setError("Email Required!");
                     return;

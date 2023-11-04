@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/splashscreen"
     android:layout_height="match_parent"
     tools:context=".SplashScreen">
 
@@ -27,6 +28,7 @@
         android:layout_marginBottom="177dp"
         android:paddingTop="20dp"
         android:text="Uplift"
+        android:textColor="@color/white"
         android:textAlignment="center"
         android:textSize="50dp" />
 </RelativeLayout>

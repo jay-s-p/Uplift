@@ -6,24 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ScrollView
+    <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/logout"
-        android:columnCount="2"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
-        android:rowCount="3"
+        android:rowCount="4"
+        android:columnCount="1"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="20dp">
 
     <androidx.cardview.widget.CardView
 
         android:id="@+id/cardperformance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="150dp"
         android:layout_rowWeight="1"
         android:layout_columnWeight="1"
         android:layout_gravity="fill"
@@ -32,14 +32,50 @@
         app:cardUseCompatPadding="true">
 
             <ImageView
-                android:layout_width="350dp"
-                android:layout_height="150dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:src="@drawable/performance"/>
 
     </androidx.cardview.widget.CardView>
 
+        <androidx.cardview.widget.CardView
 
-    </ScrollView>
+            android:id="@+id/cardperformance2"
+            android:layout_width="350dp"
+            android:layout_height="150dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/nutrition"/>
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+
+            android:id="@+id/cardperformance3"
+            android:layout_width="350dp"
+            android:layout_height="150dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/training"/>
+
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
 
 
     <ImageView
