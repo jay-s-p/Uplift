@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "179042070060",
+    "project_id": "uplift-6a17a",
+    "storage_bucket": "uplift-6a17a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:179042070060:android:1c0cc2408eaafde605eb89",
+        "android_client_info": {
+          "package_name": "com.example.uplift"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDueFTlv7H3OldsfVtnZFrbrZuFlVgVWHk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
